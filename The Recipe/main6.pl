@@ -10,13 +10,12 @@ get_amounts(Amounts) :-
   number_string(N, Line),
 
   length(Lines, N),
-
   maplist(read_line_to_string(user_input), Lines),
 
   maplist(parse, Lines, Amounts).
 
 get_cost([H, B, K], Cost) :-
-  Cost is max(B-H, 0)*K.
+  Cost is max(B-H, 0) * K.
 
 main :-
   get_amounts(Amounts),

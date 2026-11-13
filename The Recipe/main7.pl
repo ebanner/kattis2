@@ -15,7 +15,7 @@ get_amounts(Amounts) :-
   maplist(parse, Lines, Amounts).
 
 cost([H, B, K], Cost) :-
-  Cost is max(B-H, 0)*K.
+  Cost is max(B-H, 0) * K.
 
 main :-
   get_amounts(Amounts),
