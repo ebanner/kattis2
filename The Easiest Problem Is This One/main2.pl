@@ -1,5 +1,10 @@
 :- initialization(main, main).
 
+get_numbers(Numbers) :-
+  length(Lines, 4),
+  maplist(read_line_to_string(user_input), Lines),
+  maplist(number_string, Numbers, Lines).
+
 digit_sum(N, Sum) :-
   number_codes(N, Codes),
   maplist([C, D]>>(D is C - 0'0), Codes, Digits),
@@ -11,11 +16,6 @@ factor(N, F) :-
   Product is N*F,
   digit_sum(Product, PSum),
   PSum =:= NSum.
-
-get_numbers(Numbers) :-
-  length(Lines, 4),
-  maplist(read_line_to_string(user_input), Lines),
-  maplist(number_string, Numbers, Lines).
 
 main :-
   get_numbers(Numbers),
