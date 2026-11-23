@@ -20,8 +20,7 @@ main :-
       -> Result = "DA"
       ;  Result = "NE"
     ),
-    Results,
-    Matches
+    Results, Matches
   ),
 
   maplist(writeln, Results).
