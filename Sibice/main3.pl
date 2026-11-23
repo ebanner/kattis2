@@ -17,8 +17,8 @@ main :-
   maplist(
     [Result, Match]>>(
       Match =< D
-        -> Result = "DA"
-        ; Result = "NE"
+      -> Result = "DA"
+      ;  Result = "NE"
     ),
     Results,
     Matches
